@@ -7,6 +7,7 @@
 */build
 */dist
 */.cache
+*/*.class
 .DS_Store
 .env.local
 .env.development.local
