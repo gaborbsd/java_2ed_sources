@@ -1,4 +1,5 @@
 .idea
+*.class
 */out/
 */target/
 *.iml
@@ -7,7 +8,6 @@
 */build
 */dist
 */.cache
-*/*.class
 .DS_Store
 .env.local
 .env.development.local
