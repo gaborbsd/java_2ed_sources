@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="400.0" prefWidth="448.0"
+	tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javaoktato.multiclock.MultiClockController">
+	<tabs>
+		<Tab text="Clock">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="356.0"
+					prefWidth="536.0">
+					<children>
+						<ChoiceBox fx:id="timeZoneList" layoutX="117.0" layoutY="40.0"
+							prefWidth="150.0" />
+						<Label layoutX="39.0" layoutY="44.0" text="Timezone:" />
+						<Label fx:id="clockLabel" alignment="CENTER" layoutX="13.0"
+							layoutY="83.0" prefHeight="83.0" prefWidth="423.0"
+							style="-fx-background-color: #000000;" text="00:00:00.000"
+							textFill="#5bd060">
+							<font>
+								<Font name="Courier New" size="56.0" />
+							</font>
+						</Label>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab text="Stopper">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+					prefWidth="200.0">
+					<children>
+						<Label fx:id="stopperLabel" alignment="CENTER" layoutX="14.0"
+							layoutY="14.0" prefHeight="83.0" prefWidth="431.0"
+							style="-fx-background-color: #000000;" text="00:00:00.000"
+							textFill="#5bd060">
+							<font>
+								<Font name="Courier New" size="56.0" />
+							</font>
+						</Label>
+						<Button layoutX="194.0" layoutY="104.0" mnemonicParsing="false"
+							onAction="#handleStopperLapClick" text="Lap" />
+						<Button layoutX="79.0" layoutY="104.0" mnemonicParsing="false"
+							onAction="#handleStopperStartClick" text="Start" />
+						<Button layoutX="137.0" layoutY="104.0" mnemonicParsing="false"
+							onAction="#handleStopperStopClick" text="Stop" />
+						<Button layoutX="251.0" layoutY="104.0" mnemonicParsing="false"
+							onAction="#handleStopperResetClick" text="Reset" />
+						<ListView fx:id="stopperLapsList" layoutX="12.0" layoutY="158.0"
+							prefHeight="200.0" prefWidth="426.0" />
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab text="Timer">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+					prefWidth="200.0">
+					<children>
+						<Label fx:id="timerLabel" alignment="CENTER" layoutX="15.0"
+							layoutY="103.0" prefHeight="83.0" prefWidth="420.0"
+							style="-fx-background-color: #000000;" text="00:00:00.000"
+							textFill="#5bd060">
+							<font>
+								<Font name="Courier New" size="56.0" />
+							</font>
+						</Label>
+						<TextField fx:id="timerTextField" layoutX="91.0"
+							layoutY="24.0" text="00:01:00.00" />
+						<Label layoutX="34.0" layoutY="28.0" text="Timer:" />
+						<Button layoutX="34.0" layoutY="60.0" mnemonicParsing="false"
+							onAction="#handleTimerStartClick" text="Start" />
+						<Button layoutX="91.0" layoutY="60.0" mnemonicParsing="false"
+							onAction="#handleTimerStopClick" text="Stop" />
+						<Button layoutX="148.0" layoutY="60.0" mnemonicParsing="false"
+							text="Resume" onAction="#handleTimerResumeClick" />
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab text="Duration">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+					prefWidth="200.0">
+					<children>
+						<Label layoutX="36.0" layoutY="33.0" text="Start date:" />
+						<Label layoutX="38.0" layoutY="62.0" text="End date:" />
+						<DatePicker fx:id="durationStartPicker" layoutX="111.0"
+							layoutY="29.0" onAction="#updateDuration" />
+						<DatePicker fx:id="durationEndPicker" layoutX="111.0"
+							layoutY="58.0" onAction="#updateDuration" />
+						<Button layoutX="294.0" layoutY="29.0" mnemonicParsing="false"
+							onAction="#durationFromNow" text="Now" />
+						<Button layoutX="294.0" layoutY="58.0" mnemonicParsing="false"
+							onAction="#durationUntilNow" text="Now" />
+						<Label fx:id="durationLabel" alignment="CENTER" layoutX="14.0"
+							layoutY="103.0" prefHeight="83.0" prefWidth="420.0"
+							style="-fx-background-color: #000000;" text="1y 1m 1d" textFill="#5bd060">
+							<font>
+								<Font name="Courier New" size="56.0" />
+							</font>
+						</Label>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>
